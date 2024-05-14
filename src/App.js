@@ -10,28 +10,59 @@ import { useState } from 'react';
 // # Actual code
 export default function App() {
   // 1. STEP: Create a state
-  const [color, setColor] = useState(randomColor()); // I have to use the color property, I think.
+  const [color, setColor] = useState(randomColor());
   console.log(typeof color);
   function generateColorWithButton() {
     setColor(randomColor());
   }
   return (
     <>
-      <h1>Random Color Generator</h1>
+      <h1
+        style={{
+          textAlign: 'center',
+          width: 400,
+          margin: 'auto',
+          padding: '20px',
+          fontFamily: 'system-ui',
+        }}
+      >
+        Random Color Generator
+      </h1>
       <div
         style={{
           backgroundColor: color,
           inlineHeight: 10,
-          width: '300px',
+          width: '400px',
           padding: '50px',
-          margin: '20px',
+          margin: 'auto',
           textAlign: 'center',
+          fontSize: 25,
+          fontFamily: 'system-ui',
         }}
       >
         Generated Color: {color}
       </div>
       <br />
-      <button onClick={generateColorWithButton}>Generate</button>
+      <button
+        onClick={generateColorWithButton}
+        style={{
+          width: '120px',
+          height: '50px',
+          display: 'block',
+          marginTop: 0,
+          marginBottom: 0,
+          marginRight: 'auto',
+          marginLeft: 'auto',
+          borderRadius: '7px',
+          backgroundColor: 'black',
+          textAlign: 'center',
+          fontFamily: 'system-ui',
+          fontWeight: 'bold',
+          color: 'white',
+        }}
+      >
+        GENERATE
+      </button>
     </>
   );
 }
