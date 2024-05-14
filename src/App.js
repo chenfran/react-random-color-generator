@@ -1,23 +1,37 @@
-import './App.css';
-import logo from './logo.svg';
+// # Goals
+// - A button with the exact text `Generate` will cause a new color to be generated when it is clicked
+// - Once a color is generated, update the background color of a div which contains the exact text `Generated Color: <background color hex code>` (the background color and the hex code must match)
 
+// # Import libraries
+// import chalk from 'chalk';
+import randomColor from 'randomcolor';
+import { useState } from 'react';
+
+// # Actual code
 export default function App() {
+  // 1. STEP: Create a state
+  const [color, setColor] = useState(randomColor()); // I have to use the color property, I think.
+  console.log(typeof color);
+  function generateColorWithButton() {
+    setColor(randomColor());
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Random Color Generator</h1>
+      <div
+        style={{
+          backgroundColor: color,
+          inlineHeight: 10,
+          width: '300px',
+          padding: '50px',
+          margin: '20px',
+          textAlign: 'center',
+        }}
+      >
+        Generated Color: {color}
+      </div>
+      <br />
+      <button onClick={generateColorWithButton}>Generate</button>
+    </>
   );
 }
