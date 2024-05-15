@@ -6,6 +6,7 @@
 // import chalk from 'chalk';
 import randomColor from 'randomcolor';
 import { useState } from 'react';
+import styles from './App.module.scss';
 
 // # Actual code
 export default function App() {
@@ -17,17 +18,7 @@ export default function App() {
   }
   return (
     <>
-      <h1
-        style={{
-          textAlign: 'center',
-          width: 400,
-          margin: 'auto',
-          padding: '20px',
-          fontFamily: 'system-ui',
-        }}
-      >
-        Random Color Generator
-      </h1>
+      <h1 className={styles.h1}>Random Color Generator</h1>
       <div
         style={{
           backgroundColor: color,
@@ -43,24 +34,7 @@ export default function App() {
         Generated Color: {color}
       </div>
       <br />
-      <button
-        onClick={generateColorWithButton}
-        style={{
-          width: '120px',
-          height: '50px',
-          display: 'block',
-          marginTop: 0,
-          marginBottom: 0,
-          marginRight: 'auto',
-          marginLeft: 'auto',
-          borderRadius: '7px',
-          backgroundColor: 'black',
-          textAlign: 'center',
-          fontFamily: 'system-ui',
-          fontWeight: 'bold',
-          color: 'white',
-        }}
-      >
+      <button className={styles.button} onClick={generateColorWithButton}>
         GENERATE
       </button>
     </>
