@@ -35,7 +35,7 @@ export default function App() {
       </div>
       <br />
       <button className={styles.button} onClick={generateColorWithButton}>
-        GENERATE
+        Generate
       </button>
     </>
   );
