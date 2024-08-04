@@ -18,18 +18,7 @@ export default function App() {
   return (
     <>
       <h1 className={styles.h1}>Random Color Generator</h1>
-      <div
-        style={{
-          backgroundColor: color,
-          inlineHeight: 10,
-          width: '400px',
-          padding: '50px',
-          margin: 'auto',
-          textAlign: 'center',
-          fontSize: 25,
-          fontFamily: 'system-ui',
-        }}
-      >
+      <div className={styles.colorBox} style={{ backgroundColor: color }}>
         Generated Color: {color}
       </div>
       <br />
