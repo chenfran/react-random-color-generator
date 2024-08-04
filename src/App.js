@@ -3,7 +3,6 @@
 // - Once a color is generated, update the background color of a div which contains the exact text `Generated Color: <background color hex code>` (the background color and the hex code must match)
 
 // # Import libraries
-// import chalk from 'chalk';
 import randomColor from 'randomcolor';
 import { useState } from 'react';
 import styles from './App.module.scss';
@@ -12,7 +11,7 @@ import styles from './App.module.scss';
 export default function App() {
   // 1. STEP: Create a state
   const [color, setColor] = useState(randomColor());
-  console.log(typeof color);
+
   function generateColorWithButton() {
     setColor(randomColor());
   }
